@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.calculator {
+  border: 1px solid #000;
+  width: 500px;
+  margin: 30px auto;
+  padding: 25px 0;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+}
+
+.cal-btn {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  margin: 0 10px;
+}
+
+#result {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #000;
+  line-height: 40px;
+  margin: 15px auto;
+}
+
+.slideshow {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.slideshow img {
+  display: none;
+  width: 100%;
+}
+
+.slideshow img.show {
+  display: block;
+}
+
+.img-container {
+  position: relative;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.slide-btn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-decoration: none;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.btn-container {
+  margin-top: 15px;
+}
+
+.btn-container button {
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: aqua;
+  margin: 0 5px;
+}
+
+.btn-container button:hover,
+.btn-container button.active {
+  background-color: blue;
+  color: #fff;
+}
+
+.btn-container button:focus {
+  outline: none;
+}
+
+.game {
+  width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 30px 0;
+  background: #0808b1;
+}
+
+.rule {
+  color: #fff;
+  margin: 0 100px 25px;
+}
+
+.rule-title {
+  color: paleturquoise;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.rule-block {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.rule-number {
+  font-size: 25px;
+  margin-right: 30px;
+  color: paleturquoise;
+}
+
+.rule-content {
+  text-align: left;
+  font-size: 13px;
+}
+
+.door-container img {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.play-button {
+  margin: 20px 0;
+}
+
+.play-button button {
+  background-color: orangered;
+  color: blue;
+  padding: 10px 15px;
+  border: none;
+}
+
+.result-block {
+  margin: 0 15px;
+  color: #fff;
+}
+
+.result {
+  background-color: paleturquoise;
+  color: blue;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.result-label {
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.slideshow .img-container {
+  position: relative;
+}
+
+.slideshow .img-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+/* accordion */
+.accordion-container {
+  width: 800px;
+  margin: 30px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.acc-header {
+  border-bottom: 1px solid #ccc;
+  margin: 0;
+  display: flex;
+}
+
+.acc-button {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+  background-color: #fff;
+}
+
+.acc-button::after {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  right: 10px;
+  content: "";
+  background-image: url("./image/chervon-down.svg");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.acc-button.open::after {
+  transform: rotate(180deg);
+}
+
+.acc-body {
+  padding: 10px;
+}
+
+.acc-collapse {
+  display: none;
+}
+
+.acc-collapse.show {
+  border-bottom: 1px solid #ccc;
+}
+
+.ajax {
+  width: 800px;
+  margin: 30px auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(221, 221, 221, 0.5);
+}
+
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #9c41f2;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loading.loading {
+  visibility: visible;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#myTable th,
+#myTable td {
+  border: 1px solid #000;
+  padding: 5px;
+}
